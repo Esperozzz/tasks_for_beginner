@@ -2,6 +2,6 @@
 
 error_reporting(-1);
 
-/*for ($i = 1; $i <= 19; $i++) {
-    copy('task.php', 'lesson1/task' . $i . '.php');
+/*for ($i = 1; $i <= 14; $i++) {
+    copy('task.php', 'lesson6/task' . $i . '.php');
 }*/
