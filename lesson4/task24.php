@@ -2,9 +2,6 @@
 
 include_once '../header.php';
 
-define('YES', 'да');
-define('NO', 'нет');
-
 for ($i = 0; $i <= 5; $i++) {
 
     $string = $i . '2345';

@@ -2,9 +2,6 @@
 
 include_once '../header.php';
 
-define('YES', 'да');
-define('NO', 'нет');
-
 $string = 'abcde';
 
 if ($string{0} === 'a') {
