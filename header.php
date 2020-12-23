@@ -2,6 +2,7 @@
 
 error_reporting(-1);
 
+define('IS', 'есть');
 define('YES', 'да');
 define('NO', 'нет');
 

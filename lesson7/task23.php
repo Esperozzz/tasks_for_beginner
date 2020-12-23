@@ -2,7 +2,7 @@
 
 include_once '../header.php';
 
-$message = 'Позиция первой буквы "b" в строке: ';
+$message = 'Позиция первой буквы "b" в строке с терьтей позиции: ';
 $text = 'abc abc abc';
 $needle = 'b';
 $startPosition = 3;
