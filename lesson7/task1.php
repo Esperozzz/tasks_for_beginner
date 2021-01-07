@@ -3,5 +3,6 @@
 include_once '../header.php';
 
 $str = 'php';
+$uppercaseString = strtoupper($str);
 
-echo strtoupper($str);
+echo $uppercaseString;

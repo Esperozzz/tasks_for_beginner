@@ -3,5 +3,6 @@
 include_once '../header.php';
 
 $str = 'PHP';
+$lowercaseString = strtolower($str);
 
-echo strtolower($str);
+echo $lowercaseString;
