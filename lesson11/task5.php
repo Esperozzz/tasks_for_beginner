@@ -2,21 +2,30 @@
 
 include_once '../header.php';
 
+define('SECOND_PER_HOUR', 3600);
+
 $currentDate = time();
 
 $second = 48;
-$minut = 23;
+$minute = 23;
 $hour = 7;
-$day = date('d');
-$month = date('m');
+$previousDay = date('j') - 1;
+$month = date('n');
 $year = date('Y');
 
 $assignedDate = mktime(
     $hour,
-    $minut,
+    $minute,
     $second,
     $month,
-    $day,
+    $previousDay,
     $year
 );
 
+//Вычисляем модуль числа, что бы не определять наибольшую дату
+$timeDiff = abs($currentDate - $assignedDate);
+
+//Округляем число часов до целых
+$diffInHours = floor($timeDiff / SECOND_PER_HOUR);
+
+echo $diffInHours;
