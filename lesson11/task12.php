@@ -3,20 +3,21 @@
 include_once '../header.php';
 
 define('FIRST_YEAR_OF_OUR_ERA', 1);
-
 $script = $_SERVER['SCRIPT_NAME'];
+$errorMessages = [];
 
 if (isset($_POST['submit'])) {
-
-    $enteredYear = $_POST['year'];
-
-    if ($enteredYear < FIRST_YEAR_OF_OUR_ERA || $enteredYear > PHP_INT_MAX) {
-
+    if (!empty($_POST['year'])) {
+        
+        $enteredYear = trim($_POST['year']);
+        $enteredYear = 
+        if ($enteredYear < FIRST_YEAR_OF_OUR_ERA || $enteredYear > PHP_INT_MAX) {
+            $errorMessages[] = 'Year entered incorrectly';
+        }
     }
-
-
-    print_r($_POST);
 }
+
+print_r($_POST);
 
 ?>
 <!doctype html>
