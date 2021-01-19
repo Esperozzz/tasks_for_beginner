@@ -6,6 +6,7 @@ define('FIRST_YEAR_OF_OUR_ERA', 1);
 
 $script = $_SERVER['SCRIPT_NAME'];
 $errorMessages = [];
+$messages = [];
 $result = '';
 
 if (isset($_POST['submit'])) {
@@ -14,8 +15,8 @@ if (isset($_POST['submit'])) {
         //Очищаем ввод
         $enteredYear = trim($_POST['year']);
 
-        //Проверяем, что бы ввод был числом
-        if (!is_int($enteredYear)) {
+        //Проверяем, является ли переменная числом
+        if (!is_numeric($enteredYear)) {
             $errorMessages[] = 'Year must be a number';
         }
 
@@ -26,9 +27,17 @@ if (isset($_POST['submit'])) {
 
         //Ошибок нет
         if (empty($errorMessages)) {
-            $result = $enteredYear;
+            
+            $enteredYearTimestamp = mktime(0, 0, 0, 0, 0, $enteredYear);
+            $leapYear = date('L', $enteredYearTimestamp);
+            
+            if ($leapYear) {
+                $messages[] = 'Leap year';
+            } else {
+                $messages[] = 'Not a leap year';
+            }
         }
     }
 }
 
-include_once 'layout/page.php';
+include_once 'layout/page_controller.php';
