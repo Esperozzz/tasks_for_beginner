@@ -13,8 +13,11 @@ define('IS', 'есть');
 define('YES', 'да');
 define('NO', 'нет');
 
+$countTasks = 7;
+$lessonNum = 16;
+
 /*
-for ($i = 1; $i <= 6; $i++) {
-    copy('task.php', 'lesson15/task' . $i . '.php');
+for ($i = 1; $i <= $countTasks; $i++) {
+    copy('task.php', '/storage/emulated/0/php/tasks/lesson' . $lessonNum . '/task' . $i . '.php');
 }
 */
