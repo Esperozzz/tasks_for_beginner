@@ -3,10 +3,12 @@
 include_once '../header.php';
 
 $numbersSets = [[1, 2, 3], [4, 5], [6]];
+$numbersSum = 0;
 
-$resultSum = 0;
-foreach ($numbersSets as $numbers) {
-    $resultSum += array_sum($numbers);
+foreach ($numbersSets as $array) {
+    foreach ($array as $num) {
+        $numbersSum += $num;
+    }
 }
 
-echo $resultSum;
+echo $numbersSum;
