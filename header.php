@@ -9,12 +9,15 @@ define('ASCII_LOWERCASE_A_CODE', 97);
 define('ASCII_LOWERCASE_Z_CODE', 122);
 
 define('LINE_BREAK', '<br>');
+define('EMPTY_STRING', '');
 define('IS', 'есть');
 define('YES', 'да');
 define('NO', 'нет');
 
 $countTasks = 10;
 $lessonNum = 20;
+
+$scriptName = $_SERVER['SCRIPT_NAME'];
 
 /*
 for ($i = 1; $i <= $countTasks; $i++) {

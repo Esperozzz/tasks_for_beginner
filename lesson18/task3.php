@@ -2,6 +2,10 @@
 
 include_once '../header.php';
 
+/**
+ * @param array $numbers
+ * @return array
+ */
 function happyTickets(array $numbers): array
 {
     $happyTickets = [];
@@ -11,9 +15,14 @@ function happyTickets(array $numbers): array
             $happyTickets[] = $num;
         }
     }
+
     return $happyTickets;
 }
 
+/**
+ * @param int $num
+ * @return bool
+ */
 function isHappyTicket(int $num): bool
 {
     $rightPart = $num % 1000;
@@ -25,12 +34,11 @@ function isHappyTicket(int $num): bool
     return $rightPartSum === $leftPartSum;
 }
 
+/**
+ * @param int $num
+ * @return int
+ */
 function sumOfDigits(int $num): int
 {
     return array_sum(str_split($num));
 }
-
-$arr = range(100000, 999999);
-echo '<pre>';
-print_r(happyTickets($arr));
-echo '</pre>';
