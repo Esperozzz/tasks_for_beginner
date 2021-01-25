@@ -25,7 +25,6 @@ if (!empty($name)) {
             <input type="text" name="name" id="name"><br>
             <input type="submit" name="submit">
         </form>
-
         <?php else: ?>
 
         <h3>Привет, <?=$userName?>!</h3>

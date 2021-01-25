@@ -6,7 +6,6 @@ $formsSend = isset($_POST['submit']);
 $userAge = $_POST['age'] ?? '';
 $errorMessages = [];
 
-
 if (!empty($userAge)) {
     $userAge = strip_tags(trim($_POST['age']));
 } else {
@@ -22,28 +21,20 @@ if (!empty($userAge)) {
     <body>
         
         <?php if ($formsSend && !empty($errorMessages)): ?>
-            
             <ul style="color: red;">
-                
             <?php foreach ($errorMessages as $message): ?>
-                
                 <li><?=$message?></li>
-                
             <?php endforeach; ?>
-                
             </ul>
-            
         <?php endif; ?>
 
         <?php if (!$formsSend || !empty($errorMessages)): ?>
             
         <form action="<?=$scriptName?>" method="post">
-            
             <label for="age">Введите свой возраст: </label><br>
             <input type="text" name="age" id="age"><br>
             
             <input type="submit" name="submit" value="Отправить">
-                
         </form>
 
         <?php else: ?>

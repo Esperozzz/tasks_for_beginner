@@ -55,7 +55,6 @@ if ($userLogin === $login && $userPassword === $password) {
         <?php if ((!$formsSend || !empty($errorMessages)) && !$userAccess): ?>
             
         <form action="<?=$scriptName?>" method="post">
-            
             <label for="login">Введите логин: </label><br>
             <input type="text" name="login" id="login"><br>
                 
@@ -63,7 +62,6 @@ if ($userLogin === $login && $userPassword === $password) {
             <input type="password" name="password" id="password"><br>
                      
             <input type="submit" name="submit" value="Отправить">
-                
         </form>
 
         <?php else: ?>

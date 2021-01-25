@@ -1,38 +1,29 @@
 <?php
 
 include_once '../header.php';
-include_once 'controller/controller_variable.php';
+include_once 'helper_functions.php';
 
-define('FIRST_YEAR_OF_OUR_ERA', 1);
-$formMessage = 'Enter year';
+$formsSend = isset($_POST['submit']);
+$year = $_POST['year'] ?? 0;
 
-if (isset($_POST['submit'])) {
-    if (!empty($_POST['year'])) {
+?>
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Task 12</title>
+</head>
+<body>
+    <form action="<?=$scriptName?>" method="post">
+        <label for="year">Укажите год в формате 0000: </label><br>
+        <input type="text" name="year" id="year"><br>
+        <input type="submit" name="submit" value="Отправить">
+    </form>
 
-        $enteredYear = trim($_POST['year']);
+    <?php if ($formsSend && isLeapYer($year)): ?>
+        <h3>Год високосный</h3>
+    <?php else: ?>
+        <h3>Год не високосный</h3>
+    <?php endif; ?>
 
-        if (!is_numeric($enteredYear)) {
-            $errorMessages[] = 'Year must be a number';
-        }
-
-        if ($enteredYear < FIRST_YEAR_OF_OUR_ERA || $enteredYear > PHP_INT_MAX) {
-            $errorMessages[] = 'Year entered incorrectly';
-        }
-
-        if (empty($errorMessages)) {
-            $yearTimestamp = mktime(0, 0, 0, 12, 31, $enteredYear);
-            $leapYear = date('L', $yearTimestamp);
-
-            if ($leapYear) {
-                $messages[] = 'Leap year';
-            } else {
-                $messages[] = 'Not a leap year';
-            }
-        }
-
-    } else {
-        $errorMessages[] = 'Year not specified';
-    }
-}
-
-include_once 'controller/page_controller.php';
+</body>
+</html>

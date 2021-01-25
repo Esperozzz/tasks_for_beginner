@@ -37,13 +37,9 @@ if (!empty($userMessage)) {
         <?php if ($formsSend && !empty($errorMessages)): ?>
             
             <ul style="color: red;">
-                
             <?php foreach ($errorMessages as $message): ?>
-                
                 <li><?=$message?></li>
-                
             <?php endforeach; ?>
-                
             </ul>
             
         <?php endif; ?>
@@ -51,7 +47,6 @@ if (!empty($userMessage)) {
         <?php if (!$formsSend || !empty($errorMessages)): ?>
             
         <form action="<?=$scriptName?>" method="post">
-            
             <label for="name">Введите свое имя: </label><br>
             <input type="text" name="name" id="name"><br>
                 
@@ -62,7 +57,6 @@ if (!empty($userMessage)) {
             <textarea name="message" id="message"></textarea><br>
                 
             <input type="submit" name="submit" value="Отправить">
-                
         </form>
 
         <?php else: ?>
