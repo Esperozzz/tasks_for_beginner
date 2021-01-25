@@ -21,7 +21,7 @@ if (!empty($name)) {
         <?php if (empty($userName)): ?>
 
         <form action="<?=$scriptName?>" method="post">
-            <label for="name">Введите свое имя: </label>
+            <label for="name">Введите свое имя: </label><br>
             <input type="text" name="name" id="name"><br>
             <input type="submit" name="submit">
         </form>
