@@ -4,7 +4,11 @@ include_once '../header.php';
 include_once 'helper_functions.php';
 
 $formsSend = isset($_POST['submit']);
-$year = $_POST['year'] ?? 0;
+$year = $_POST['year'] ?? '';
+
+if (!is_numeric($year)) {
+    $year = '';
+}
 
 ?>
 <!doctype html>
@@ -14,15 +18,16 @@ $year = $_POST['year'] ?? 0;
 </head>
 <body>
     <form action="<?=$scriptName?>" method="post">
-        <label for="year">Укажите год в формате 0000: </label><br>
+        <label for="year">Укажите год в формате ГГГГ: </label><br>
         <input type="text" name="year" id="year"><br>
         <input type="submit" name="submit" value="Отправить">
     </form>
 
-    <?php if ($formsSend && isLeapYer($year)): ?>
+    <?php if (!empty($year) && isLeapYer($year)): ?>
         <h3>Год високосный</h3>
-    <?php else: ?>
+    <?php elseif (!empty($year) && !isLeapYer($year)): ?>
         <h3>Год не високосный</h3>
+    <?php else: ?>
     <?php endif; ?>
 
 </body>
