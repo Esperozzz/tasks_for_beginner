@@ -11,7 +11,5 @@
 
 
 Завершить следующие уроки:
-* lesson 11 task 12 <
-* 
 * lesson 18 task 4
 * lesson 20

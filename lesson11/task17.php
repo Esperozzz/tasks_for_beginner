@@ -8,23 +8,21 @@ $date = $_POST['date'] ?? '';
 
 if (matchDateAndTimeFormat($date)) {
     $timestamp = strtotime($date);
-    $newDateFormat = date('H:i-s Y.m.d', $timestamp);
+    $newDateFormat = date('H:i:s d.m.Y', $timestamp);
 } else {
     $newDateFormat = '';
 }
-
-//2025-12-31T12:13:59
 
 ?>
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Task 14</title>
+    <title>Task 17</title>
 </head>
 <body>
     
     <form action="<?=$scriptName?>" method="post">
-        <label for="date">Введите дату в формате дд-мм-гггг: </label><br>
+        <label for="date">Введите дату в формате гггг-мм-ддTчч:мм:сс : </label><br>
         <input type="text" name="date" id="date"><br>
         <input type="submit" name="submit" value="Отправить">
     </form>

@@ -1,6 +1,25 @@
 <?php
 define('DATE_AND_TIME_SEPARATOR', 'T');
+define('MONTH_IN_YEAR', 12);
+define('FRIDAY_SEQUENCE_NUMBER', 5);
 
+/**
+ * Находит все пятницы тринадцатого в указанном году в формате d-m-Y
+ */
+function fridayOfTheThirteenthYear(int $year): array
+{
+    $fridays = [];
+    for ($month = 1; $month <= MONTH_IN_YEAR; $month++) {
+
+        $timestamp = mktime(0, 0, 0, $month, 13, $year);
+        $dayOfTheWeek = (int) date('N', $timestamp);
+
+        if ($dayOfTheWeek === FRIDAY_SEQUENCE_NUMBER) {
+            $fridays[] = date('d-m-Y', $timestamp);
+        }
+    }
+    return $fridays;
+}
 
 /**
  * Проверяет, является ли год високосным
@@ -21,7 +40,7 @@ function matchDateAndTimeFormat(string $date): bool
     if ($separator === DATE_AND_TIME_SEPARATOR) {
         $newDate = str_replace(DATE_AND_TIME_SEPARATOR, ' ', $date);
         
-        return date_create_from_format('Y-m-dTH:i:s', $newDate) instanceof DateTime;
+        return date_create_from_format('Y-m-d H:i:s', $newDate) instanceof DateTime;
     }
     return false;
 }

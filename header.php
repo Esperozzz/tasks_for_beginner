@@ -14,13 +14,12 @@ define('IS', 'есть');
 define('YES', 'да');
 define('NO', 'нет');
 
-$countTasks = 10;
-$lessonNum = 20;
+$countTasks = 11;
+$lessonNum = 24;
 
 $scriptName = $_SERVER['SCRIPT_NAME'];
 
 /*
 for ($i = 1; $i <= $countTasks; $i++) {
     copy('task.php', 'lesson' . $lessonNum . '/task' . $i . '.php');
-}
-*/
+}*/
