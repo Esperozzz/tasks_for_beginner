@@ -23,3 +23,10 @@ $scriptName = $_SERVER['SCRIPT_NAME'];
 for ($i = 1; $i <= $countTasks; $i++) {
     copy('task.php', 'lesson' . $lessonNum . '/task' . $i . '.php');
 }*/
+
+function dd($arg)
+{
+    echo '<pre>';
+    print_r($arg);
+    echo '</pre>';
+}
