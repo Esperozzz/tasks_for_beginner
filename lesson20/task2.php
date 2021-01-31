@@ -1,7 +1,6 @@
 <?php
 
 include_once '../header.php';
-include_once 'helper_functions.php';
 
 $formsSend = isset($_POST['submit']);
 $languages = $_POST['lang'] ?? [];

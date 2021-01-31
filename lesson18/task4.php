@@ -9,11 +9,6 @@ include_once '../header.php';
  */
 function isFriendlyNumbers(int $num1, int $num2): bool
 {
-    //$sumDividersOfNum1 = sumNumbers(dividersOfNumber($num1));
-    //$sumDividersOfNum2 = sumNumbers(dividersOfNumber($num2));
-
-    //return $sumDividersOfNum1 === $sumDividersOfNum2;
-
     return $num1 === $num2;
 }
 
@@ -61,12 +56,15 @@ foreach ($numbers as $number) {
 $allFriendlyNumbers = [];
 //Итаеративно сравниваем суммы делителей, если они равны, записываем
 //совпадения в каждый отдельный массив
+$i = 0;
 foreach ($sumOfDividersOfNum as $key1 => $comparedNum) {
     foreach ($sumOfDividersOfNum as $key2 => $num) {
         if ($key1 !== $key2 && isFriendlyNumbers($comparedNum, $num)) {
-            $allFriendlyNumbers[$key1 . '_and_' . $key2] = $comparedNum;
+            $allFriendlyNumbers[$i][] = $key1;
+            $allFriendlyNumbers[$i][] = $key2;
         }
     }
+    $i++;
 }
 
 echo '<pre>';

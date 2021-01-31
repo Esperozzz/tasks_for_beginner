@@ -6,5 +6,3 @@ function inputForm(string $type, string $name, string $value): string
 {
     return "<input type=\"{$type}\" name=\"{$name}\" value=\"{$value}\">";
 }
-
-echo inputForm('input', 'name', 'Hello');
